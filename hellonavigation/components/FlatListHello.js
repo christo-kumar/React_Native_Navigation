@@ -41,6 +41,7 @@ export const FlatListHello = ({ navigation }) => {
     };
 
     const didSelectCell = (item) => {
+        console.log(item);
         navigation.navigate('Image', { data: item });
     }
 
