@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
 });
 
 
-export const ImageHello = ({ navigation }) => {
+export const ImageHello = ({ route, navigation }) => {
+    const item = route.params.data;
     const [text, setText] = useState('...');
     const [submitted, setSubmitted] = useState(false);
 
@@ -57,9 +58,9 @@ export const ImageHello = ({ navigation }) => {
             <ImageBackground
                 source={{ uri: 'https://media.istockphoto.com/photos/old-rough-white-painted-brick-wall-large-texture-whitewashed-masonry-picture-id1345971773' }}
             >
-                <Text style={styles.text}> Please Enter the Text:</Text>
+                <Text style={styles.text}> Please Enter the Text: {item.name}</Text>
                 <TextInput style={styles.input}
-                    placeholder='e.g Christo'
+                    placeholder={item.name}
                     onChangeText={(value) => { onTextInput(value); }}
                     keyboardType='default'
                     maxLength={22}

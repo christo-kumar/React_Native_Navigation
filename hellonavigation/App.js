@@ -19,6 +19,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { ImageHello } from './components/ImageHello';
 import { ListHello } from './components/ListHello';
+import { FlatListHello } from './components/FlatListHello';
 
 
 const Stack = createStackNavigator();
@@ -30,11 +31,11 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen
           name='Home'
-          component={ImageHello}
+          component={FlatListHello}
         />
         <Stack.Screen
-          name='List'
-          component={ListHello}
+          name='Image'
+          component={ImageHello}
         />
       </Stack.Navigator>
 
