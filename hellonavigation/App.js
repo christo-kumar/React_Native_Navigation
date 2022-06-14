@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
 /**
  * Sample React Native App
@@ -15,15 +16,23 @@ import {
 } from 'react-native';
 
 import { ImageHello } from './components/ImageHello';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const App = () => {
 
   return (
-    // <View style={styles.container}>
-    //   <StylesHello />
-    // </View>
-    //<FlexHello />
-    <ImageHello />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Home'
+          component={ImageHello}
+        />
+      </Stack.Navigator>
+
+    </NavigationContainer>
   );
 };
 
