@@ -14,10 +14,12 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-
-import { ImageHello } from './components/ImageHello';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import { ImageHello } from './components/ImageHello';
+import { ListHello } from './components/ListHello';
+
 
 const Stack = createStackNavigator();
 
@@ -29,6 +31,10 @@ const App = () => {
         <Stack.Screen
           name='Home'
           component={ImageHello}
+        />
+        <Stack.Screen
+          name='List'
+          component={ListHello}
         />
       </Stack.Navigator>
 

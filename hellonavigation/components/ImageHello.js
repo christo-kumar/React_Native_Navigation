@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 });
 
 
-export const ImageHello = () => {
+export const ImageHello = ({ navigation }) => {
     const [text, setText] = useState('...');
     const [submitted, setSubmitted] = useState(false);
 
@@ -48,7 +48,8 @@ export const ImageHello = () => {
     };
 
     const onButtonPress = () => {
-        setSubmitted(!submitted);
+        navigation.navigate('List');
+        //setSubmitted(!submitted);
     };
 
     return (
